@@ -1,0 +1,39 @@
+---
+layout: default
+title: Mentions légales
+---
+
+<section class="section pt-28">
+  <div class="container-page">
+    <p class="eyebrow">Informations légales</p>
+    <h1 class="section-title">Mentions légales</h1>
+
+    <div class="prose-text mt-8 space-y-8">
+      <div>
+        <h2 class="text-xl font-bold text-navy">Éditeur du site</h2>
+        <p class="mt-2">Académie Lamottoise de Taekwondo, association loi 1901.<br />
+        Siège : 3 rue de Bourgogne, 41600 Lamotte-Beuvron.<br />
+        Contact : <a class="font-semibold text-brand underline" href="mailto:<%= site.metadata.email %>"><%= site.metadata.email %></a></p>
+        <p class="mt-2">Responsable de la publication : à compléter.</p>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-bold text-navy">Hébergement</h2>
+        <p class="mt-2">À compléter (nom, adresse et site de l'hébergeur).</p>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-bold text-navy">Données personnelles et cookies</h2>
+        <p class="mt-2">Ce site n'utilise aucun cookie de suivi et ne collecte aucune donnée personnelle. Les messages envoyés par e-mail ne sont utilisés que pour répondre à votre demande.</p>
+        <p class="mt-2">La carte du dojo est fournie par OpenStreetMap et peut déposer des données techniques lors de son affichage.</p>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-bold text-navy">Propriété intellectuelle</h2>
+        <p class="mt-2">Les textes, le logo et les images du site appartiennent à l'association ou sont utilisés avec autorisation. Toute reproduction nécessite son accord préalable.</p>
+      </div>
+    </div>
+
+    <a href="<%= relative_url '/' %>" class="btn-primary mt-10">Retour à l'accueil</a>
+  </div>
+</section>
