@@ -1,0 +1,28 @@
+<footer class="bg-navy-dark py-12 text-sm text-gray-300">
+  <div class="container-page grid gap-8 sm:grid-cols-3">
+    <div>
+      <p class="font-bold text-white"><%= metadata.title %></p>
+      <p class="mt-2">Club de taekwondo à Lamotte-Beuvron (Loir-et-Cher), depuis 2016.</p>
+    </div>
+    <div>
+      <p class="font-bold text-white">Le dojo</p>
+      <address class="mt-2 not-italic">Dojo Pierre de Coubertin<br />3 rue de Bourgogne<br />41600 Lamotte-Beuvron</address>
+    </div>
+    <div>
+      <p class="font-bold text-white">Navigation</p>
+      <ul class="mt-2 space-y-1">
+        <% Shared::Navbar::LINKS.each do |label, path| %>
+          <li><a class="hover:text-white hover:underline" href="<%= relative_url path %>"><%= label %></a></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class="container-page mt-8 flex flex-wrap items-center justify-between gap-2 border-t border-white/10 pt-6 text-xs text-gray-400">
+    <p>&copy; <%= Time.now.year %> <%= metadata.title %>. Tous droits réservés.</p>
+    <a class="hover:text-white hover:underline" href="<%= relative_url '/mentions-legales/' %>">Mentions légales</a>
+  </div>
+</footer>
+
+<a href="#contenu" id="back-to-top" class="invisible fixed bottom-5 right-5 z-20 rounded-full bg-brand p-3 text-white opacity-0 shadow-lg transition-opacity hover:bg-brand-dark" aria-label="Retour en haut de page">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</a>
