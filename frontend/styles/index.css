@@ -1,0 +1,117 @@
+@import "@fontsource-variable/inter";
+@import "tailwindcss";
+
+@source "../../src";
+
+@theme {
+  --color-brand: #c8102e;
+  --color-brand-dark: #9d0c24;
+  --color-navy: #0b2a6b;
+  --color-navy-dark: #081c47;
+  --color-ink: #14161a;
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-brand);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    * {
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+}
+
+@layer components {
+  .section {
+    @apply scroll-mt-16 py-16 sm:py-20;
+  }
+
+  .container-page {
+    @apply mx-auto max-w-5xl px-4 sm:px-6;
+  }
+
+  .eyebrow {
+    @apply text-sm font-bold uppercase tracking-widest text-brand;
+  }
+
+  .section-title {
+    @apply mt-1 text-3xl font-extrabold tracking-tight text-navy sm:text-4xl;
+  }
+
+  .subtitle {
+    @apply mt-12 text-xl font-bold text-navy;
+  }
+
+  .prose-text {
+    @apply max-w-3xl text-base leading-relaxed text-gray-700;
+  }
+
+  .card {
+    @apply rounded-xl border border-gray-200 bg-white p-5 shadow-sm;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-lg bg-brand px-6 py-3 font-semibold text-white transition-colors hover:bg-brand-dark;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center rounded-lg border border-white/40 px-6 py-3 font-semibold text-white transition-colors hover:bg-white/10;
+  }
+
+  .nav-link {
+    @apply rounded px-2 py-1 transition-colors hover:text-brand;
+  }
+
+  .nav-link[aria-current="true"] {
+    @apply font-bold text-brand;
+  }
+}
+
+/* Titre d'accueil : « A L TKD » qui se déploie en « Académie Lamottoise de Taekwondo ».
+   L'état par défaut est l'état final ; les animations partent de l'état initial. */
+.altkd-title {
+  letter-spacing: -0.025em;
+  animation: altkd-spacing 1s ease-out 0.4s both;
+}
+
+.altkd-title .i {
+  animation: altkd-initial 0.6s ease-out 2.2s both;
+}
+
+.altkd-title .r {
+  display: inline-grid;
+  grid-template-columns: 1fr;
+  vertical-align: bottom;
+  animation: altkd-reveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) var(--d, 0s) both;
+}
+
+.altkd-title .r > span {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@keyframes altkd-reveal {
+  from { grid-template-columns: 0fr; opacity: 0; }
+}
+
+@keyframes altkd-initial {
+  from { color: #ff4d63; }
+}
+
+@keyframes altkd-spacing {
+  from { letter-spacing: 0.3em; }
+}
