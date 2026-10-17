@@ -33,6 +33,7 @@ import build from "./config/esbuild.defaults.js"
  * @type {BuildOptions}
  */
 const esbuildOptions = {
+  publicPath: `${process.env.BASE_PATH || ""}/_bridgetown/static`,
   plugins: [
     // add new plugins here...
   ],

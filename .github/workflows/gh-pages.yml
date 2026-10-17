@@ -26,6 +26,8 @@ jobs:
       - name: Build
         env:
           BRIDGETOWN_ENV: production
+          # Remove once a custom domain is configured
+          BASE_PATH: /${{ github.event.repository.name }}
         run: bin/bridgetown deploy
 
       - name: Upload build artifact
