@@ -1,0 +1,21 @@
+<header id="sticky-nav" class="invisible fixed inset-x-0 top-0 z-20 -translate-y-full border-b border-gray-200 bg-white/95 shadow-sm backdrop-blur transition-transform duration-200">
+  <div class="container-page flex items-center justify-between gap-4 py-2">
+    <a href="<%= relative_url '/' %>" class="flex items-center gap-3 font-extrabold text-navy">
+      <img src="<%= relative_url '/images/logo-56.png' %>" alt="" width="44" height="44" class="h-11 w-11 rounded-full bg-white" />
+      <span class="hidden text-base sm:inline"><%= @metadata.title %></span>
+      <span class="text-base sm:hidden">ALTKD</span>
+    </a>
+
+    <button type="button" id="menu-toggle" class="rounded-lg border border-gray-300 p-2 md:hidden" aria-expanded="false" aria-controls="menu-list" aria-label="Ouvrir le menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+
+    <nav aria-label="Navigation principale" class="hidden max-md:absolute max-md:inset-x-0 max-md:top-full max-md:border-b max-md:border-gray-200 max-md:bg-white max-md:p-4 max-md:shadow-md md:block" id="menu-list">
+      <ul class="flex flex-col gap-1 text-sm font-medium md:flex-row md:gap-4">
+        <% Shared::Navbar::LINKS.each do |label, path| %>
+          <li><a href="<%= relative_url path %>" class="nav-link block"><%= label %></a></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>
