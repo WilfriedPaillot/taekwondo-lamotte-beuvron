@@ -167,7 +167,12 @@ title: Accueil
       <% end %>
     </ul>
 
-    <h3 class="subtitle">Ce que l'on pratique</h3>
+    <div class="mt-16 border-t border-gray-200 pt-12">
+      <p class="eyebrow">Au club</p>
+      <h3 class="section-title text-2xl sm:text-3xl">Ce que l'on pratique</h3>
+    </div>
+
+    <h4 class="subtitle text-lg">Le taekwondo traditionnel</h4>
     <ul class="mt-4 grid gap-4 sm:grid-cols-2">
       <% [
         ["Le combat (kyorugi)", "affrontements contrôlés avec protections, pour ceux qui le souhaitent."],
@@ -178,7 +183,8 @@ title: Accueil
         <li class="card"><strong class="text-navy"><%= titre %></strong><span class="text-gray-700"> : <%= texte %></span></li>
       <% end %>
     </ul>
-    <h3 class="subtitle">Le Taekwondo Impact</h3>
+
+    <h4 class="subtitle text-lg">Le Taekwondo Impact</h4>
     <p class="prose-text mt-3">Nouvelle discipline du club, officielle à la Fédération française de taekwondo depuis 2022, pour les adeptes des sports de contact. Elle associe les techniques de pieds et de poings du taekwondo, avec des coups portés au-dessus de la ceinture sur des cibles autorisées.</p>
     <ul class="mt-4 grid gap-4 sm:grid-cols-2">
       <% [
