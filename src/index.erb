@@ -167,17 +167,55 @@ title: Accueil
       <% end %>
     </ul>
 
-    <h3 class="subtitle">Ce que l'on pratique</h3>
-    <ul class="mt-4 grid gap-4 sm:grid-cols-2">
-      <% [
-        ["Le combat (kyorugi)", "affrontements contrôlés avec protections, pour ceux qui le souhaitent."],
-        ["Les enchaînements (poomsae)", "suites codifiées de techniques, travaillant précision, rythme et équilibre."],
-        ["La casse", "briser des planches pour tester sa maîtrise et sa concentration."],
-        ["L'autodéfense", "des applications pratiques des techniques."]
-      ].each do |titre, texte| %>
-        <li class="card"><strong class="text-navy"><%= titre %></strong><span class="text-gray-700"> : <%= texte %></span></li>
-      <% end %>
-    </ul>
+    <h3 class="subtitle">Deux disciplines au club</h3>
+    <div class="mt-6 grid gap-6 lg:grid-cols-2">
+      <article class="card overflow-hidden !p-0">
+        <div class="flex h-40 items-center justify-center bg-navy">
+          <svg viewBox="0 0 120 120" class="h-28 w-28" role="img" aria-label="Symbole du taekwondo traditionnel">
+            <circle cx="60" cy="60" r="52" fill="#fff" />
+            <path d="M60 8a52 52 0 0 1 0 104a26 26 0 0 1 0-52a26 26 0 0 0 0-52z" fill="#c8102e" />
+            <path d="M60 112a52 52 0 0 1 0-104a26 26 0 0 1 0 52a26 26 0 0 0 0 52z" fill="#0b2a6b" />
+            <circle cx="60" cy="34" r="8" fill="#0b2a6b" />
+            <circle cx="60" cy="86" r="8" fill="#c8102e" />
+          </svg>
+        </div>
+        <div class="p-6">
+          <h4 class="text-xl font-bold text-navy">Taekwondo traditionnel combat</h4>
+          <p class="prose-text mt-3">La pratique classique de l'art martial coréen, qui allie technique, discipline et respect. Elle se travaille en loisir comme en compétition.</p>
+          <ul class="mt-4 space-y-2 text-gray-700">
+            <% [
+              ["Le combat (kyorugi)", "affrontements contrôlés avec protections, pour ceux qui le souhaitent."],
+              ["Les enchaînements (poomsae)", "suites codifiées de techniques, travaillant précision, rythme et équilibre."],
+              ["La casse", "briser des planches pour tester sa maîtrise et sa concentration."],
+              ["L'autodéfense", "des applications pratiques des techniques."]
+            ].each do |titre, texte| %>
+              <li><strong class="text-navy"><%= titre %></strong> : <%= texte %></li>
+            <% end %>
+          </ul>
+          <p class="mt-5 text-sm font-semibold text-navy">Le samedi de 15h30 à 17h00</p>
+        </div>
+      </article>
+
+      <article class="card overflow-hidden !p-0 ring-2 ring-brand/30">
+        <div class="relative flex h-40 items-center justify-center bg-brand">
+          <span class="absolute right-4 top-4 rounded-full bg-white px-3 py-1 text-xs font-bold uppercase tracking-wide text-brand">Nouveau</span>
+          <svg viewBox="0 0 120 120" class="h-28 w-28" role="img" aria-label="Illustration d'un impact">
+            <polygon points="60,4 71,34 100,18 88,48 118,52 92,70 112,96 80,90 76,118 60,94 44,118 40,90 8,96 28,70 2,52 32,48 20,18 49,34" fill="#fff" />
+            <polygon points="60,28 66,46 84,38 77,54 94,58 78,68 88,82 70,78 68,94 60,80 52,94 50,78 32,82 42,68 26,58 43,54 36,38 54,46" fill="#0b2a6b" />
+          </svg>
+        </div>
+        <div class="p-6">
+          <h4 class="text-xl font-bold text-navy">Taekwondo Impact</h4>
+          <p class="prose-text mt-3">Une discipline officielle de la Fédération française de taekwondo, créée en 2022 pour les adeptes des sports de contact. Elle associe les techniques de <strong>pieds et de poings</strong> du taekwondo, avec des coups portés au-dessus de la ceinture sur des cibles autorisées.</p>
+          <ul class="mt-4 space-y-2 text-gray-700">
+            <li><strong class="text-navy">Pratique encadrée</strong> : casque, gants, plastron, protège-dents, coquille, protège-tibias et protège-pieds.</li>
+            <li><strong class="text-navy">Mixte et ouverte</strong> : en loisir ou en compétition, quel que soit l'âge.</li>
+            <li><strong class="text-navy">Des valeurs conservées</strong> : respect, discipline et technique restent au cœur de l'activité.</li>
+          </ul>
+          <p class="mt-5 text-sm font-semibold text-brand">Le samedi de 14h00 à 15h30</p>
+        </div>
+      </article>
+    </div>
     <p class="prose-text mt-8">Le taekwondo n'est pas seulement une méthode d'autodéfense ou un sport de combat spectaculaire : c'est aussi un art de vivre. Que vous cherchiez à vous dépenser, à progresser ou à vous mesurer en compétition, il y a une place pour vous au club.</p>
   </div>
 </section>
