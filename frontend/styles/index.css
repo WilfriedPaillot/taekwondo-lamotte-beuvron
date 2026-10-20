@@ -98,8 +98,16 @@
   animation: altkd-reveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) var(--d, 0s) both;
 }
 
-.altkd-title .r-block {
-  display: grid;
+.altkd-title .altkd-g1 {
+  animation: altkd-gap 0.7s ease-out 1.5s;
+}
+
+.altkd-title .altkd-de {
+  animation: altkd-wrap 0.7s cubic-bezier(0.22, 1, 0.36, 1) 1.5s;
+}
+
+.altkd-title .altkd-g3 {
+  animation: altkd-drop 0.7s cubic-bezier(0.22, 1, 0.36, 1) 1.5s;
 }
 
 .altkd-title .r > span {
@@ -118,4 +126,16 @@
 
 @keyframes altkd-spacing {
   from { letter-spacing: 0.3em; }
+}
+
+@keyframes altkd-gap {
+  from { margin-right: 0.3em; }
+}
+
+@keyframes altkd-wrap {
+  from { flex-basis: 0%; }
+}
+
+@keyframes altkd-drop {
+  from { transform: translateY(-0.4em); }
 }
