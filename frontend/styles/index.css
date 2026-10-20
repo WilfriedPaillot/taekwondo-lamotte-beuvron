@@ -88,7 +88,7 @@
 }
 
 .altkd-title .i {
-  animation: altkd-initial 0.6s ease-out 2.2s both;
+  animation: altkd-initial 0.6s ease-out 2.6s both;
 }
 
 .altkd-title .r {
@@ -98,26 +98,42 @@
   animation: altkd-reveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) var(--d, 0s) both;
 }
 
-.altkd-title .altkd-g1 {
-  animation: altkd-gap 0.7s ease-out 1.5s;
-}
-
-.altkd-title .altkd-de {
-  animation: altkd-wrap 0.7s cubic-bezier(0.22, 1, 0.36, 1) 1.5s;
-}
-
-.altkd-title .altkd-g3 {
-  animation: altkd-drop 0.7s cubic-bezier(0.22, 1, 0.36, 1) 1.5s;
-}
-
 .altkd-title .r > span {
   min-width: 0;
   overflow: hidden;
   white-space: nowrap;
 }
 
+/* Majuscule de départ qui s'efface au profit de la minuscule */
+.altkd-title .o {
+  display: inline-grid;
+  grid-template-columns: 0fr;
+  opacity: 0;
+  animation: altkd-hide 0.7s cubic-bezier(0.22, 1, 0.36, 1) var(--d, 0s) both;
+}
+
+.altkd-title .o > span {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.altkd-title .altkd-de {
+  flex-basis: 100%;
+  text-align: center;
+  animation: altkd-line 0.8s cubic-bezier(0.22, 1, 0.36, 1) 1.6s both;
+}
+
+.altkd-title .altkd-g3 {
+  font-size: 1.25em;
+  animation: altkd-grow 0.8s cubic-bezier(0.22, 1, 0.36, 1) 1.6s both;
+}
+
 @keyframes altkd-reveal {
   from { grid-template-columns: 0fr; opacity: 0; }
+}
+
+@keyframes altkd-hide {
+  from { grid-template-columns: 1fr; opacity: 1; }
 }
 
 @keyframes altkd-initial {
@@ -128,14 +144,10 @@
   from { letter-spacing: 0.3em; }
 }
 
-@keyframes altkd-gap {
-  from { margin-right: 0.3em; }
+@keyframes altkd-line {
+  from { flex-basis: 0%; opacity: 0; }
 }
 
-@keyframes altkd-wrap {
-  from { flex-basis: 0%; }
-}
-
-@keyframes altkd-drop {
-  from { transform: translateY(-0.4em); }
+@keyframes altkd-grow {
+  from { font-size: 1em; }
 }
