@@ -16,7 +16,7 @@
 
 Bridgetown.configure do |config|
   # The base hostname & protocol for your site, e.g. https://example.com
-  url ""
+  url ENV.fetch("SITE_URL", "https://wilfriedpaillot.github.io")
 
   available_locales [:fr]
   default_locale :fr
@@ -50,6 +50,11 @@ Bridgetown.configure do |config|
   # update `publicPath`.
   #
   base_path ENV["BASE_PATH"] if ENV["BASE_PATH"]
+
+  # Resource URLs already include base_path; avoid adding it again in the SEO tag.
+  config.hook :resources, :pre_render do |resource|
+    resource.data.canonical_url ||= resource.absolute_url.sub(%r{/index\.html$}, "/")
+  end
 
   # You can also modify options on this configuration object directly, like so:
   #

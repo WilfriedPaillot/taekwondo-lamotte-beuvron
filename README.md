@@ -53,6 +53,18 @@ bin/bridgetown console
 
 ## Deployment
 
+The GitHub Pages workflow builds the site under the repository path using
+`BASE_PATH`. The canonical and Open Graph URLs use `SITE_URL` as their origin;
+it defaults to `https://wilfriedpaillot.github.io`. To preview a production
+build with the current Pages configuration, run:
+
+```sh
+SITE_URL=https://wilfriedpaillot.github.io BASE_PATH=/taekwondo-lamotte-beuvron bin/bridgetown deploy
+```
+
+For a custom domain, set `SITE_URL` to its HTTPS origin and remove `BASE_PATH`
+from the workflow after configuring the domain in GitHub Pages and DNS.
+
 You can deploy Bridgetown sites on hosts like statichost.eu and Render as well as traditional web servers by simply building and copying the output folder to your HTML root.
 
 > Read the [Bridgetown Deployment Documentation](https://www.bridgetownrb.com/docs/deployment) for more information.

@@ -1,7 +1,10 @@
 <header id="sticky-nav" class="invisible fixed inset-x-0 top-0 z-20 -translate-y-full border-b border-gray-200 bg-white/95 shadow-sm backdrop-blur transition-transform duration-200">
   <div class="container-page flex items-center justify-between gap-4 py-2">
     <a href="<%= relative_url '/' %>" class="flex items-center gap-3 font-extrabold text-navy">
-      <img src="<%= relative_url '/images/logo-56.png' %>" alt="" width="44" height="44" class="h-11 w-11 rounded-full bg-white" />
+      <picture>
+        <source srcset="<%= relative_url '/images/logo-56.webp' %>" type="image/webp" />
+        <img src="<%= relative_url '/images/logo-56.png' %>" alt="" width="44" height="44" class="h-11 w-11 rounded-full bg-white" />
+      </picture>
       <span class="hidden text-base sm:inline"><%= @metadata.title %></span>
       <span class="text-base sm:hidden">ALTKD</span>
     </a>
